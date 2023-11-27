@@ -1,0 +1,3 @@
+modif terakhir = Membuat fungsi menghapus teman pada class User -> SELESAI
+
+modif terakhir = membuat fungsi ask_chat_gpt -> TERTUNDA
