@@ -903,11 +903,11 @@ class Facebook(Login):
 # END CLASS
 
 import time
-    
+
 def ask_chat_gpt():
     from openai import OpenAI
 
-    fb = Facebook(cookies='sb=t1caZRvSiIeoUnJz450G6-w7; datr=t1caZSaR3eRejBBgdR_CPedT; wd=1366x689; c_user=100010450276658; xs=36%3AdHR0Dpop7CbadQ%3A2%3A1700194724%3A-1%3A12205; fr=1uRoEkRhU3WhiBMvw.AWWtFzYshhprn_TU-8inyf0eLWA.BlVBkP.-r.AAA.0.0.BlVumn.AWU2Uj8Tln4; presence=C%7B%22t3%22%3A%5B%5D%2C%22utc3%22%3A1700194881571%2C%22v%22%3A1%7D', free_facebook=False)
+    fb = Facebook(cookies=os.getenv('COOKIE'), free_facebook=False)
 
     msg = fb.Messenger()
 
@@ -920,10 +920,6 @@ def ask_chat_gpt():
         user_chat = msg.new_chat_comunity(id_user='9709145459160219')
         # zpu_comunity_chat = msg.new_chat_comunity(id_comunity='9709145459160219')
         messages = user_chat.get_chat(limit=3, sort=True)
-
-        # print('------msg-----')
-        # print(messages)
-        # print('------msg-----\n')
 
         for x in messages:
 
@@ -971,16 +967,3 @@ def ask_chat_gpt():
 
 if __name__ == '__main__':
     ask_chat_gpt()
-    # fb = Facebook(cookies='sb=t1caZRvSiIeoUnJz450G6-w7; datr=t1caZSaR3eRejBBgdR_CPedT; wd=1366x689; c_user=100010450276658; xs=36%3AdHR0Dpop7CbadQ%3A2%3A1700194724%3A-1%3A12205; fr=1uRoEkRhU3WhiBMvw.AWWtFzYshhprn_TU-8inyf0eLWA.BlVBkP.-r.AAA.0.0.BlVumn.AWU2Uj8Tln4; presence=C%7B%22t3%22%3A%5B%5D%2C%22utc3%22%3A1700194881571%2C%22v%22%3A1%7D', free_facebook=False)
-    # msg = fb.Messenger()
-    # chat = msg.new_chat_comunity(id_comunity='6308243352596238')
-    # print(chat.send_text(message='Hello'))
-
-    # alexia = fb.get_profile('alexia.katharina.7')
-    # alexia.get_friends()
-    # helna = fb.get_profile('100095349966827')
-    # helna.get_posts()
-    # fb.get_profile('dikidjatar')
-    # user = fb.get_profile('100088846010436')
-    # print(user._user_info)
-    # print(f'Menghapus teman "{user.name}" {"Berhasil" if user.remove_friends() else "Gagal"}')
