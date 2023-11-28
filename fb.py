@@ -1,3 +1,6 @@
+# The code is partially taken from the fbthon module.
+# https://github.com/MR-X-junior/fbthon
+
 import requests
 import re
 import os
